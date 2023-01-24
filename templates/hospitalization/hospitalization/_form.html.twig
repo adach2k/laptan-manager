@@ -1,0 +1,15 @@
+{{ form_start(form) }}
+<div class="col-md-11 mx-auto" style="font-size: 20px;">
+	<div class="row">
+		<div class="col-md-6 mx-auto">{{ form_row(form.dateEntree) }}</div>
+		<div class="col-md-6 mx-auto">{{ form_row(form.dateSortie) }}</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-6 mx-auto">{{ form_row(form.patient) }}</div>
+		<div class="col-md-6 mx-auto">{{ form_row(form.bed) }}</div>
+	</div>
+
+	<button type="submit" class="btn btn-success">{{ button_label|default('Sauvegarder') }}</button>
+</div>
+{{ form_end(form) }}

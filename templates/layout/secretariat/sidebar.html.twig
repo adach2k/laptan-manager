@@ -1,0 +1,39 @@
+    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+        
+        {{ include('layout/dashbord.html.twig') }}
+
+        <div class="sidebar-heading">
+            <i class="fas fa-place-of-worship"></i><span>RENDEZ-VOUS</span>
+        </div>
+        <li class="nav-item m-0 p-0">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                <i class="fas fa-money-bill"></i><span>Rendez-vous</span>
+            </a>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <h6 class="collapse-header">Gestion de RDV</h6>
+                    <a class="collapse-item" href="{{ path('appointment.new') }}"> Nouveau RDV </a>
+                    <a class="collapse-item" href="{{ path('appointment.index') }}"> Tous les RDV </a>
+                    <a class="collapse-item" href="{{ path('appointment.index') }}"> RDV du jour </a>
+                </div>
+            </div>
+        </li>
+        <hr class="sidebar-divider">
+
+        <li class="nav-item">
+            <a class="nav-link" href="{{ path('patient.new') }}">
+                <i class="fas fa-edit"> Nouveau Patient </i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{{ path('doctor.new') }}">
+                <i class="fas fa-edit"> Nouveau Medecin </i>
+            </a>
+        </li>
+        <hr class="sidebar-divider d-none d-md-block">
+
+        <!-- Sidebar Toggler (Sidebar) -->
+        <div class="text-center d-none d-md-inline">
+            <button class="rounded-circle border-0" id="sidebarToggle"></button>
+        </div>
+    </ul>

@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Un rendez-vous{% endblock %}
+
+{% block body %}
+    <div class="container bg-white">
+        <h3 class="text-center py-3 text-primary">Rendez-vous pour {{ appointment.patient.nom}} </h3>
+        <div class="row">
+            <div class="col-md-5 mx-auto">
+                <table class="table">
+                    <tr>
+                        <th>Numéro Dossier</th>
+                        <td>{{ appointment.patient.code}}</td>
+                    </tr>
+                    <tr>
+                        <th>Nom</th>
+                        <td>{{ appointment.patient.nom}}</td>
+                    </tr>
+                    <tr>
+                        <th>Prénom</th>
+                        <td>{{ appointment.patient.prenom}}</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-md-5 mx-auto">
+                <table class="table">
+                    <tr>
+                        <th>Medecin</th>
+                        <td>{{ appointment.medecin.name}} {{ appointment.medecin.firstName}}</td>
+                    </tr>
+                    <tr>
+                        <th>Specialité</th>
+                        <td>{{ appointment.medecin.speciality.label}}</td>
+                    </tr>
+                    <tr>
+                        <th>Date du rendez-vous</th>
+                        <td>{{ appointment.appointmentAt | date('d/m/Y H:i:s') }}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}

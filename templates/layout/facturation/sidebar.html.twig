@@ -1,0 +1,44 @@
+    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+        
+        {{ include('layout/dashbord.html.twig') }}
+
+        <div class="sidebar-heading">
+            <i class="fas fa-place-of-worship"></i><span>INTERFACE</span>
+        </div>
+        <li class="nav-item m-0 p-0">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                <i class="fas fa-money-bill"></i><span>Factures</span>
+            </a>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <h6 class="collapse-header">Liste de facture:</h6>
+                    <a class="collapse-item" href="{{ path('facturation_facture_new') }}">Nouvelle facture</a>
+                    <a class="collapse-item" href="{{ path('facturation_facture_index') }}">Factures payées</a>
+                    <a class="collapse-item" href="{{ path('facturation_facture_index') }}">Factures non-payées</a>
+                </div>
+            </div>
+        </li>
+        <hr class="sidebar-divider">
+
+        <li class="nav-item">
+            <a class="nav-link" href="{{ path('facturation_facture_new') }}">
+                <i class="fas fa-edit"> Etablir Facture </i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{{ path('facturation_reglement_new') }}">
+                <i class="fas fa-edit"> Etablir Réçu </i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{{ path('facturation_reglement_index') }}">
+                <i class="fas fa-list"> Réglements </i>
+            </a>
+        </li>
+        <hr class="sidebar-divider d-none d-md-block">
+
+        <!-- Sidebar Toggler (Sidebar) -->
+        <div class="text-center d-none d-md-inline">
+            <button class="rounded-circle border-0" id="sidebarToggle"></button>
+        </div>
+    </ul>

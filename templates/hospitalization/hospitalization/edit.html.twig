@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Gestion Hospitalization{% endblock %}
+
+{% block body %}
+
+     <div class="container bg-white border-primary">
+        <h1 class="text-center text-success py-3">Mise à jour de l'hospitalization</h1>
+        {{ include ("hospitalization/hospitalization/_form.html.twig", {'button_label': 'Editer'}) }}
+        {{ include ("hospitalization/hospitalization/_delete.html.twig") }}
+    </div>
+    
+{% endblock %}

@@ -1,0 +1,7 @@
+<div class="text-right col-md-10 mx-auto">
+	<form method="POST" action="{{ path('care.delete', {id: care.id}) }}">
+		<input type="hidden" name="_method" value="DELETE">
+		<input type="hidden" name="_token" value="{{ csrf_token('delete' ~ care.id) }}">
+		<button class="btn btn-danger"> Supprimer <i class="fas fa-backspace mt-1"></i></button>
+	</form>
+</div>

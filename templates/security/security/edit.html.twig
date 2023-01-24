@@ -1,0 +1,40 @@
+{% extends "layout/connection.html.twig" %}
+
+{% block body %}
+	<style>.bg-login{background:no-repeat center url(img/stethoscop.png); background-size: cover;}</style>
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-xl-8 col-lg-10 col-md-9">
+				<div class="card o-hidden border-0 shadow-lg my-5">
+					<div class="card-body p-0">
+						<div class="row">
+							<div class="col-lg-6 d-none d-lg-block bg-login"></div>
+							<div class="col-lg-6">
+								<div class="p-5">
+									<div class="text-center">
+										<h1 class="h4 text-gray-900 mb-4">Authentifiez-vous <i class="fa fa-user-md" aria-hidden="true"></i></h1>
+									</div>
+									{{ form_start(form) }}
+										<div class="form-group">
+											{{ form_row(form.oldPassword) }}
+										</div>
+                                        <hr>
+										<div class="form-group">
+											{{ form_row(form.newPassword) }}
+										</div>
+										<hr>
+                                        <div class="form-group">
+											{{ form_row(form.confirmPassword) }}
+										</div>
+										<hr>
+										<button type="submit" class="btn btn-outline-primary">Valider</button>
+									{{ form_end(form) }}
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

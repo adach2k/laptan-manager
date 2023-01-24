@@ -1,0 +1,16 @@
+{{ form_start(form) }}
+<div class="col-md-10 mx-auto" style="font-size: 20px;">
+	<div class="row">
+		<div class="col-6 mx-auto">{{ form_row(form.nom) }}</div>
+		<div class="col-6 mx-auto">{{ form_row(form.prenom) }}</div>
+	</div>
+
+    <div class="row">
+		<div class="col-4 mx-auto">{{ form_row(form.age) }}</div>
+		<div class="col-4 mx-auto">{{ form_row(form.address) }}</div>
+		<div class="col-4 mx-auto">{{ form_row(form.tel) }}</div>
+	</div>
+
+    <button type="submit" class="btn btn-success">{{ button_label|default('Save') }}</button>
+</div>
+{{ form_end(form) }}

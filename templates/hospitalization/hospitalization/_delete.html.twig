@@ -1,0 +1,7 @@
+<div class="col-md-10 mx-auto text-right">
+    <form method="POST" action="{{ path('hospitalization.delete', {id: hospitalization.id}) }}">
+        <input type="hidden" name="_method" value="DELETE">
+        <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ hospitalization.id) }}">
+        <button class="btn btn-danger"> Libérer <i class="fas fa-backspace"></i></button>
+    </form>
+</div>

@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Reglement{% endblock %}
+
+{% block body %}
+    <h1>Create new Reglement</h1>
+
+    {{ include('facturation/reglement/_form.html.twig') }}
+
+    <a href="{{ path('facturation_reglement_index') }}" class="btn btn-primary">Retour à l'index</a>
+{% endblock %}

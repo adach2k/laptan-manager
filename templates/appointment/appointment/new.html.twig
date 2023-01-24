@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouveau rendez-vous{% endblock %}
+
+{% block body %}
+
+    <div class="container bg-white">
+        <h1 class="text-center py-3">Enregistrer un nouveau rendez-vous</h>
+        {{ include('appointment/appointment/_form.html.twig', {'button_label': 'Enregistrer'}) }}
+    </div>
+
+{% endblock %}

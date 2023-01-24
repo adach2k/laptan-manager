@@ -1,0 +1,5 @@
+<form method="POST" action="{{ path('type.delete', {id: type.id}) }}" class="d-inline">
+	<input type="hidden" name="_method" value="DELETE">
+	<input type="hidden" name="_token" value="{{ csrf_token('delete' ~ type.id) }}">
+	<button class="btn btn-danger"><i class="fas fa-backspace"></i></button>
+</form>

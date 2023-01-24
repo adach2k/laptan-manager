@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouveau personnel{% endblock %}
+
+{% block body %}
+
+    <div class="container bg-white mx-auto">
+        <h3 class="text-center text-info">Ajout d'un nouveau personnel</h3>
+        {{ include('admin/user/_form.html.twig', {'button_label': 'Enregistrer'}) }}
+    </div>
+
+{% endblock %}

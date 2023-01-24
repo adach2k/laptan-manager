@@ -1,0 +1,16 @@
+{{ form_start(form) }}
+<div class="col-md-10 mx-auto" style="font-size: 20px;">
+	<div class="row">
+		<div class="col-md-6 mx-auto">{{ form_row(form.hospitalization) }}</div>
+		<div class="col-md-6 mx-auto">{{ form_row(form.medecin) }}</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-4 mx-auto">{{ form_row(form.facture) }}</div>
+		<div class="col-md-4 mx-auto">{{ form_row(form.typeCare) }}</div>
+		<div class="col-md-4 mx-auto">{{ form_row(form.montant) }}</div>
+	</div>
+
+	<button type="submit" class="btn btn-success">{{ button_label|default('Save') }}</button>
+</div>
+{{ form_end(form) }}

@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste de spécialité{% endblock %}
+
+{% block body %}
+    <div class="container mt-4">
+        <h3 class="text-center">Liste de spécialités</h3>
+        <div class="col-10 mx-auto py-3 my-3 bg-white">
+            <div class="text-right my-3">
+                <button class="btn btn-success" data-toggle="modal" data-target="#exampleModal">
+                    <i class="fas fa-edit"> Nouvelle specialité </i>
+                </button>
+                <!-- Modal -->
+                <div class="modal fade text-left" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Enregistrer une nouvelle specialité</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                {{ form_start(form) }}
+                                    {{ form_rest(form) }}
+                                    <button class="btn btn-primary">Sauvegarder</button>
+                                {{ form_end(form) }}
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Label</th>
+                        <th scope="col" class="text-center">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for specialty in specialties %}
+                    <tr>
+                        <td>{{ specialty.id }}</td>
+                        <td>{{ specialty.label }}</td>
+                        <td class="text-center">
+                            <a href="{{ path('specialty.edit', {id: specialty.id}) }}" class="btn btn-primary"><i class="fas fa-edit"></i></a>
+                            <form method="POST" action="{{ path('specialty.delete', {id: specialty.id}) }}" class="d-inline">
+                                <input type="hidden" name="_method" value="DELETE">
+                                <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ specialty.id) }}">
+                                <button class="btn btn-danger"><i class="fas fa-backspace"></i></button>
+                            </form>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}

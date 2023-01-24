@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouvelle Prestation{% endblock %}
+
+{% block body %}
+
+    <div class="container">
+        <h1 class="text-center py-3">Enregistrement d'une nouvelle prestation</h1>
+        {{ include ("hospitalization/care/_form.html.twig", {'button_label': 'Enregistrer'}) }}
+    </div>
+
+{% endblock %}

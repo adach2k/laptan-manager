@@ -1,0 +1,19 @@
+{{ form_start(form) }}
+<div class="col-sm-10 mx-auto my-5 text-left" style="font-size: 20px;">
+    <div class="row">
+        <div class="col-8">{{ form_row(form.patient) }}</div>
+        <div class="col-4 mx-auto mt-md-1"><a href="{{ path('patient.new') }}" class="btn btn-primary btn-sm">Nouveau</a></div>
+    </div>
+
+    <div class="row">
+        <div class="col-8">{{ form_row(form.medecin) }}</div>
+        <div class="col-4 mx-auto mt-md-1"><a href="{{ path('doctor.new') }}" class="btn btn-primary btn-sm">Nouveau</a></div>
+    </div>
+
+    <div class="row mx-auto">
+        {{ form_row(form.appointmentAt, {'label': 'Date et heure du rendez-vous'}) }}
+    </div>
+
+    <button type="submit" class="btn btn-success">{{ button_label|default('Save') }}</button>
+</div>
+{{ form_end(form) }}

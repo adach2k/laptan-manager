@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouveau medecin{% endblock %}
+
+{% block body %}
+
+    <div class="container">
+        <h1 class="text-center py-3">Enregistrer un nouveau medecin</h1>
+        {{ include ("appointment/medecin/_form.html.twig", {'button_label': 'Enregistrer'}) }}
+    </div>
+    
+{% endblock %}

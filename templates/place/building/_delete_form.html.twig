@@ -1,0 +1,7 @@
+<div class="col-md-10 text-right mx-auto">
+    <form method="post" action="{{ path('place_building_delete', {'id': building.id}) }}" onsubmit="return confirm('Êtes vous vraiment sûr ?');">
+        <input type="hidden" name="_method" value="DELETE">
+        <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ building.id) }}">
+        <button class="btn btn-danger"> Supprimer <i class="fas fa-backspace"></i></button>
+    </form>
+</div>

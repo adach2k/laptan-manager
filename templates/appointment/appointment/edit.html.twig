@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Gestion rendez-vous{% endblock %}
+
+{% block body %}
+
+    <div class="container bg-white border-primary">
+        <h1 class="text-center py-3">Reporter le rendez-vous</h1>
+        {{ include ("appointment/appointment/_form.html.twig", {'button_label': 'Editer'}) }}
+    </div>
+    
+{% endblock %}
